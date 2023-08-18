@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-align_absolute-center slds-m-vertical_large">
+        <template lwc:if={showButton}>
+            <button
+                class="slds-button slds-p-around_large scanButton"
+                onclick={handleBeginScanClick}>
+                <template lwc:if={hideSldsIconName}></template>
+                <template lwc:else>
+                    <lightning-icon icon-name={sldsIconName} title={scanTitleText} class="slds-m-right_medium"></lightning-icon>
+                </template>
+                <div class="textContainer">
+                    <template lwc:if={hideScanTitleText}></template>
+                    <template lwc:else>
+                        <div><b>{scanTitleText}</b></div> <br/>
+                    </template>
+                    <template lwc:if={hideScanSubtitleText}></template>
+                    <template lwc:else>
+                        <div>{scanSubtitleText}</div>
+                    </template>
+                </div>
+            </button>
+        </template>
+        <template lwc:else> 
+            <template lwc:if={hideNoMobilePublisherText}></template>
+            <template lwc:else>
+                <div class="textContainer">
+                    {noMobilePublisherText}
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

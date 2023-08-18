@@ -1,0 +1,5 @@
+button.scanButton {
+    border-color: var(--dxp-g-brand, #cecece);
+    border-width: 1px;
+    border-style: solid;
+}

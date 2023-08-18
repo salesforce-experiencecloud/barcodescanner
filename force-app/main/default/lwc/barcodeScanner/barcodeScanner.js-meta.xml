@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Barcode Scanner</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="cameraFacing" type="String" label="Camera Facing" default="BACK" role="inputOnly" 
+                description="Use the front or back camera of the mobile device. Valid values are 'FRONT' or 'BACK'. Defaults to BACK"/>
+
+            <property name="scanTitleText" type="String" label="Title Text" default="Scan Barcode" role="inputOnly" 
+                description="Title text that shows up next to the icon"/>
+            <property name="hideScanTitleText" type="Boolean" label="Hide Title Text" default="false" role="inputOnly" 
+                description="Hide title text that shows up next to the icon"/>
+
+            <property name="scanSubtitleText" type="String" label="Subtitle Text" default="Tap here to start scanning." role="inputOnly" 
+                description="Subtitle text that shows up next to the icon below the title"/>
+            <property name="hideScanSubtitleText" type="Boolean" label="Hide Subtitle Text" default="false" role="inputOnly" 
+                description="Hide subtitle text that shows up next to the icon below the title"/>
+
+            <property name="sldsIconName" type="String" label="SLDS Icon Name" role="inputOnly" default="utility:scan"
+                description="SLDS Icon name to render to the left of the title and subtitle. Ex: utility:scan" />
+            <property name="hideSldsIconName" type="Boolean" label="Hide SLDS Icon Name" default="false" role="inputOnly" 
+                description="Hide SLDS Icon name that renders to the left of the title and subtitle." />
+
+            <property name="instructionText" type="String" label="Instruction Text" default="Scan a code" role="inputOnly" 
+                description="Text to provide instructions to the user while they are scanning with their camera"/>
+            <property name="hideInstructionText" type="Boolean" label="Hide Instruction Text " default="false" role="inputOnly" 
+                description="Hide text that provides instructions to the user while they are scanning with their camera"/>
+
+            <property name="successText" type="String" label="Success Text" default="Scan successful!" role="inputOnly" 
+                description="Text to display after a successful scan is completed"/>
+            <property name="hideSuccessText" type="Boolean" label="Hide Success Text" default="false" role="inputOnly" 
+                description="Hide text that displays after a successful scan is completed"/>
+
+            <property name="noMobilePublisherText" type="String" label="Not in Mobile Pulisher App Text" default="Barcode scanning is only available in the mobile app." role="inputOnly" 
+                description="Text to display when viewing outside of Mobile Publisher app"/>
+            <property name="hideNoMobilePublisherText" type="Boolean" label="Hide Not in Mobile Pulisher App Text" default="false" role="inputOnly" 
+                description="Hide Text to display when viewing outside of Mobile Publisher app"/>
+
+            <property name="barcodeScanResult" type="String" label="Barcode Scan Result" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
