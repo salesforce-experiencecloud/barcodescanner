@@ -4,7 +4,7 @@ import {FlowNavigationNextEvent} from 'lightning/flowSupport';
 
 export default class PrescriptionBarCodeScanner extends LightningElement {
 
-    isMobilePublisher = window.navigator.userAgent.indexOf('CommunityHybridContainer') > -1;
+    myScanner = getBarcodeScanner();
 
     @api scanTitleText;
     @api hideScanTitleText = false;
@@ -21,16 +21,15 @@ export default class PrescriptionBarCodeScanner extends LightningElement {
 
     @api cameraFacing;
 
+    @api barcodeScanResult;
+
     @api
     get showButton() {
         return this.isMobilePublisher;
     }
 
-    
-
-    @api barcodeScanResult;
-
-    myScanner = getBarcodeScanner();
+    //isMobilePublisher = window.navigator.userAgent.indexOf('CommunityHybridContainer') > -1;
+    isMobilePublisher = (this.myScanner != null && this.myScanner.isAvailable() );
 
     connectedCallback() {
         this.scanTitleText = (this.scanTitleText !== undefined && this.scanTitleText !== null) ? this.scanTitleText : 'Scan Barcode' ;
